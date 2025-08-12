@@ -19,7 +19,7 @@
   --logo-h: clamp(28px, 5vw, 85px); /* высота логотипа */
 }
 
-/* dark — как по умолчанию */
+
 
 *{ box-sizing:border-box }
 html,body{ height:100% }
@@ -31,13 +31,13 @@ body{
   overflow-x:hidden;
 }
 
-/* ===== Фон ===== */
+
 .bg{ position:fixed; inset:0; z-index:-2; background:linear-gradient(180deg,var(--bg-1),var(--bg-2)); }
 .glow{ position:absolute; filter:blur(60px); opacity:.7; mix-blend-mode:screen; }
 .glow-1{ width:60vw; height:60vh; top:-10vh; left:-10vw; background:radial-gradient(50% 50% at 50% 50%, #5a65ff 0%, transparent 60%); }
 .glow-2{ width:70vw; height:70vh; bottom:-20vh; right:-10vw; background:radial-gradient(50% 50% at 50% 50%, #ff5bbd 0%, transparent 65%); }
 
-/* Частицы */
+
 .particles::before, .particles::after{
   content:""; position:absolute; inset:-10% -10% -10% -10%;
   background:
@@ -50,7 +50,7 @@ body{
 .particles::after{ animation-duration: 90s; opacity:.25; }
 @keyframes drift{ from{ transform:translate3d(0,0,0)} to{ transform:translate3d(0,-8%,0)} }
 
-/* ===== Хедер (НЕ липкий) ===== */
+
 .site-header{
   position: static;            /* <- больше не sticky */
   background:linear-gradient(180deg, rgba(6,8,20,.8), rgba(6,8,20,.55));
@@ -61,15 +61,15 @@ body{
 }
 .brand{ display:flex; align-items:center; gap:14px; }
 
-/* ЛОГОТИП — без свечения */
+
 .logo-img{
   height: var(--logo-h);
   width:auto; display:block; object-fit:contain; image-rendering:auto;
   border-radius:6px;
-  filter: none !important;               /* убрали glow */
+  filter: none !important;               
   box-shadow: none !important;
 }
-.logo{ display:none !important; }        /* если старый молоток в разметке */
+.logo{ display:none !important; }        
 .brand::before{ content:none !important; }
 
 .brand-title{ font-size:clamp(18px,2.8vw,28px); font-weight:800; letter-spacing:.2px; }
@@ -99,7 +99,7 @@ body{
 .btn:hover{ transform:translateY(-1px) }
 .btn.ghost{ background:transparent }
 
-/* ===== Разметка ===== */
+
 .layout{
   display:grid; grid-template-columns: 280px 1fr; gap:24px;
   max-width:1400px; margin:28px auto; padding:0 18px;
@@ -107,7 +107,7 @@ body{
 }
 .wrap{ max-width:var(--maxw); margin:0 auto; }
 
-/* ===== Оглавление (TOC) ===== */
+
 .toc{
   position:sticky; top:16px;         /* прилипает к верхнему краю окна */
   align-self:start;
@@ -149,7 +149,7 @@ body{
   box-shadow:0 8px 16px #00000020 inset, 0 0 0 1px #ffffff12 inset;
 }
 
-/* ===== Индикатор чтения ===== */
+
 .reading-progress{
   position:fixed; right:14px; top:16px;
   width:6px; height:calc(100dvh - 48px);
@@ -161,7 +161,7 @@ body{
   box-shadow:0 0 14px var(--primary);
 }
 
-/* ===== Аккордеон ===== */
+
 .accordion{
   counter-reset:cat;
   background:var(--panel); border:1px solid var(--panel-border); border-radius:20px;
@@ -183,7 +183,7 @@ body{
 .acc-summary:active{ transform:translateY(0.5px) }
 .acc-summary:focus-visible{ outline:2px solid #c7d2fe; outline-offset:3px; border-radius:14px; }
 
-/* Левая полоса — без свечения */
+
 .acc-summary::before{
   content:""; position:absolute; left:8px; top:10px; bottom:10px; width:4px; border-radius:3px;
   background:linear-gradient(180deg,var(--primary),var(--accent));
@@ -225,7 +225,7 @@ body{
 }
 .acc-item.active .acc-panel{ opacity:1; padding:22px 24px; }
 
-/* ===== Нумерованные пункты ===== */
+
 .points{ margin:0; padding:0; list-style:none; counter-reset:item; }
 .points>li{
   counter-increment:item;
@@ -293,4 +293,5 @@ html::-webkit-scrollbar-track, body::-webkit-scrollbar-track{ background:transpa
   .points>li{ padding-left:44px }
   .points>li::before{ width:40px }
 }
+
 
